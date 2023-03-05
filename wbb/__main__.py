@@ -109,16 +109,19 @@ async def start_bot():
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="Add Me ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=new"),
-            InlineKeyboardButton(text="Command ❓", callback_data="bot_command",
+            InlineKeyboardButton(text="Support", url="http://t.me/amangsupportgrup"),
+            InlineKeyboardButton(text="Amang Store", callback_data="{bikin callback baru}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="System Stats 🖥",
+                text="System Stats",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="http://t.me/amangsupportgrup"),
+             InlineKeyboardButton(text="Help Menu", callback_data="bot_command (klo mau dibuat dua buat callback baru)"),
+        ],
+        [
+            InlineKeyboardButton(text="Add me your group's", url=f"http://t.me/{BOT_USERNAME}?startgroup=new"),
         ],
     ]
 )
