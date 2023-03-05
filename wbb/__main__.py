@@ -109,10 +109,8 @@ async def start_bot():
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="Commands ❓", callback_data="bot_commands"),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
+            InlineKeyboardButton(text="Add Me ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=new"),
+            InlineKeyboardButton(text="Command ❓", callback_data="bot_command",
             ),
         ],
         [
@@ -120,33 +118,23 @@ home_keyboard_pm = InlineKeyboardMarkup(
                 text="System Stats 🖥",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="http://t.me/WBBSupport"),
-        ],
-        [
-            InlineKeyboardButton(
-                text="Add Me To Your Group 🎉",
-                url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
-            )
+            InlineKeyboardButton(text="Support 👨", url="http://t.me/amangsupportgrup"),
         ],
     ]
 )
 
+
 home_text_pm = (
-    f"Hey there! My name is {BOT_NAME}. I can manage your "
+    f"Hi! My name is {BOT_NAME}. I can stream and manage your "
     + "group with lots of useful features, feel free to "
-    + "add me to your group."
 )
 
 keyboard = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Help ❓",
+                text="Command ❓",
                 url=f"t.me/{BOT_USERNAME}?start=help",
-            ),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
             ),
         ],
         [
@@ -154,7 +142,7 @@ keyboard = InlineKeyboardMarkup(
                 text="System Stats 💻",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/WBBSupport"),
+            InlineKeyboardButton(text="Support 👨", url="t.me/amangsupportgrup"),
         ],
     ]
 )
@@ -244,7 +232,7 @@ async def help_parser(name, keyboard=None):
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
         """Hello {first_name}, My name is {bot_name}.
-I'm a group management bot with some useful features.
+I'm a stream and group management bot with some useful features.
 You can choose an option below, by clicking a button.
 Also you can ask anything in Support Group.
 """.format(
@@ -283,7 +271,7 @@ async def help_button(client, query):
     create_match = re.match(r"help_create", query.data)
     top_text = f"""
 Hello {query.from_user.first_name}, My name is {BOT_NAME}.
-I'm a group management bot with some useful features.
+I'm a stream and group management bot with some useful features.
 You can choose an option below, by clicking a button.
 Also you can ask anything in Support Group.
 
